@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Self</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <style>
+       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+          html {
+            height:100%;
+            background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+            background-attachment: fixed;
+          }
+
+          nav {
+            max-width: 960px;
+            mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+            margin: 0 auto;
+            padding: 30px 0;
+          }
+
+          nav ul {
+           text-align: center;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+          }
+
+          nav ul li {
+            display: inline-block;
+         }
+
+          nav ul li a {
+            padding: 18px;
+            font-family: "Open Sans";
+            text-transform:uppercase;
+            color: rgba(0, 35, 122, 0.5);
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+          }
+
+          nav ul li a:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(0, 35, 122, 0.7);
+          }
+
+          .container {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            overflow: hidden;
+          }
+
+          #navMenu {
+            top: 240px;
+            left: 900px;
+            width: 325px;
+            height: 325px;
+            z-index: 100;
+            background: linear-gradient(90deg, #910EC9, #d350db, #910EC9);
+            -webkit-background: linear-gradient(90deg, #910EC9, #d350db, #910EC9);
+            background-size: 400% 400%;
+            -webkit-background-size: 400% 400%;
+            animation: gradient 5s infinite;
+            -webkit-animation: gradient 5s infinite;
+          }
+
+          #navMenu:hover, .nav:hover {
+            background: #d350db;
+          }
+
+
+          .diamond {
+            position: absolute;
+            width: 300.5px;
+            height: 300.5px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            background-image: #910EC9;
+            margin-left: 20px;
+            cursor: pointer;
+            box-shadow: 1px 4px 10px #101010;
+          }
+
+          .diamond:active {
+            background: #710b9e;
+            box-shadow: 0px 1px 2.5px #101010;
+            transition: 0.1s;
+            -webkit-transition: 0.1s;
+          }
+
+
+          .nav {
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+          }
+          .small {
+            top: 186px;
+            left: 236px;
+            z-index: 50;
+            background: #643fc1;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+          }
+
+          .rotCorrect {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 14px;
+            margin-top: 8px;
+          }
+
+          #mainRotCorrect {
+            margin-left: 26px;
+            margin-top: 28px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            max-width: 90px;
+          }
+
+          i {
+            color: #EEEEEE;
+          }
+
+          img.background {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+        }
+
+        table {
+          width: 100%;
+        }
+
+        .columna{
+          width: 10%;
+        }
+        .footer {
+   position: fixed;
+   left: 0;
+   margin-top: 3px;
+   bottom: 0;
+   height: 8%;
+   width: 100%;
+   background-color: #154360;
+   color: white;
+   text-align: center;
+   font-family: Open Sans;
+
+}
+
+a{
+  text-decoration:none;
+  color:#ffffff;
+}
+
+
+
+.midiv {
+  display: inline-block;
+  position:absolute;
+  top:50%;
+  left:45%;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+
+.midiv2 {
+  display: inline-block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+
+.midiv3 {
+  display: inline-block;
+  position:absolute;
+  top:50%;
+  left:60%;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+
+.hola {
+  color:#fff;
+  background: #DB6E82;
+  border-radius:4px;
+  text-align:center;
+  text-decoration:none;
+  font-family:fontawesome;
+  position: relative;
+  display: inline-block;
+  width:40px;
+  height:28px;
+  padding-top:3px;
+  margin:0 2px;
+  -o-transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+   -webkit-font-smoothing: antialiased;
+}
+
+.hola:hover {
+  background: #ef92a3;
+}
+
+.hola2 {
+  color:#fff;
+  background: #DB6E82;
+  border-radius:4px;
+  text-align:center;
+  text-decoration:none;
+  font-family:fontawesome;
+  position: relative;
+  display: inline-block;
+  width:140px;
+  height:28px;
+  padding-top:3px;
+  margin:0 2px;
+  -o-transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+   -webkit-font-smoothing: antialiased;
+}
+
+.hola2:hover {
+  background: #ef92a3;
+}
+
+/* pop-up text */
+
+.hola span {
+  color:#666;
+  position:absolute;
+  font-family:sans-serif;
+  bottom:0;
+  left:-25px;
+  right:-25px;
+  padding:5px 7px;
+  z-index:-1;
+  font-size:14px;
+  border-radius:2px;
+  background:#fff;
+  visibility:hidden;
+  opacity:0;
+  -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* pop-up text arrow */
+
+.hola span:before {
+  content:'';
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  position:absolute;
+  bottom:-5px;
+  left:40px;
+}
+
+/* text pops up when icon is in hover state */
+
+.hola:hover span {
+  bottom:50px;
+  visibility:visible;
+  opacity:1;
+}
+
+/* font awesome icons */
+
+.hola:nth-of-type(1):before {
+content:'\f09a';
+}
+.hola:nth-of-type(2):before {
+content:'\f099';
+}
+.hola:nth-of-type(3):before {
+content:'\f0d5';
+}
+.hola:nth-of-type(4):before {
+content:'\f113';
+}
+.hola:nth-of-type(5):before {
+content:'\f17d';
+}
+.hola:nth-of-type(6):before {
+content:'\f1cb';
+}
+
+
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+
+/* pokemone pictures */
+
+.pokemon {
+  width: 200px;
+  height: 200px;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overlay */
+  box-shadow: 0 0 0 100px inset, 0 0 5px grey;
+  /* hover out transition */
+  transition: box-shadow 1s;
+  float: left;
+  margin: 10px;
+  left: 10px;
+}
+
+
+/* pokemone names */
+
+.pokemon::after {
+  width: 80%;
+  height: 80%;
+  display: block;
+  white-space: pre;
+  font: 15pt 'sigmar one';
+  color: white;
+  border: 2px solid;
+  text-align: center;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* hover out transition */
+  transition: opacity 1s .5s;
+}
+
+
+/* reveal pokemone picture on hover */
+
+.pokemon:hover {
+  box-shadow: 0 0 0 5px inset, 0 0 5px grey, 0 0 10px grey inset;
+  transition: box-shadow 1s;
+}
+
+
+/* hide pokemone name on hover */
+
+.pokemon:hover::after {
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+#bulbasaur {
+  background-image: url(https://soygirlpower.com/wp-content/uploads/2019/11/descarga.jpeg);
+  color: rgba(71, 121, 94, .9);
+}
+
+#bulbasaur::after {
+  content: 'Creativa';
+}
+
+#charmander {
+  background-image: url(http://universidadalnus.com/wp-content/uploads/2020/07/Universidad-Alnus-COmo-mejorar-la-comunicaciOn-como-Administrador-de-Proyectos-%C3%A1SUBTITULO-300x300.png);
+  color: rgba(221, 86, 63, .9);
+}
+
+#charmander::after {
+  content: 'Colaboradora'
+}
+
+#squirtle {
+  background-image: url(https://inviven.com/wp-content/uploads/2020/06/liderazgo-300x300.jpg);
+  color: rgba(65, 102, 114, .9);
+}
+
+#squirtle::after {
+  content: 'Lider'
+}
+
+#pikachu {
+  background-image: url(https://imprimetuslibros.com/wp-content/uploads/2019/05/color-300x300.png);
+  color: rgba(179, 152, 98, .9);
+}
+
+#pikachu::after {
+  content: 'Lectora'
+}
+
+#wrapper {
+  width: 500px;
+  height: 500px;
+  margin:  auto;
+  margin-left:150px;
+}
+
+
+
+
+
+      </style>
+
+      <script type="text/javascript">
+ 
+        
+      </script>
+       
+    </head>
+
+  <body>
+     <nav>
+  <ul>
+    <li>
+      <a href="Index.html">Home</a>
+    </li>
+    <li>
+      <a href="About.html">about </a>
+    </li>
+    <li>
+      <a href="Recommendation.html">Extra</a>
+    </li>
+  </ul>
+</nav>
+     
+    <div class="container">
+       <h1 style = "font-family: 'Dancing Script', cursive;
+       font-family: 'Shadows Into Light', cursive; font-size: 50px; margin-left: 140px; margin-top:22px; line-height:70px;  color: #FFFFFF;"> "El unico limite es tu mente."</h1>
+       <p style="font-family: Open Sans; font-size: 25px; margin-left: 100px; text-align: left; margin-right:500px; margin-top:10px; line-height:27px;  color: #FFFFFF;">
+        Esta soy yo, Gabriela, hoy te voy a mostrar un poco de mi. Una vez alguien me dijo que soy como una orquídea morada, e investigando se dice que simboliza prudencia y sabiduría, considero que son dos palabras que me pueden describir.
+       </p>
+      <div id="navMenu" class="diamond">
+      <img class="background" src="../Self/Imagenes/Foto1.jpg" alt="Pineapple" width="300" height="300">
+    <div id="mainRotCorrect" class="rotCorrect"><i class="fa fa-cubes fa-4x" aria-hidden="true"></i></div>
+    </div>
+    </div>
+
+    <h1 style = "font-family: 'Dancing Script', cursive;
+       font-family: 'Shadows Into Light', cursive; font-size: 30px; margin-left: 140px; margin-top:22px; line-height:70px;  color: #FFFFFF;"> Como me describiria: </h1>
+
+    <div id="wrapper">
+      <div id="bulbasaur" class="pokemon"></div>
+      <div id="charmander" class="pokemon"></div>
+      <div id="squirtle" class="pokemon"></div>
+      <div id="pikachu" class="pokemon"></div>
+    </div>
+
+    
+
+    <footer class="footer">
+      <table>
+        <tr>
+          <th class="columna">
+            <div>
+              <a href="Index.html">Home</a>
+            </div>
+          </th>
+          <th class="columna">
+            <div>
+              <a href="About.html">About</a>
+            </div>
+          </th>
+          <th class="columna">
+            <div>
+              <a href="Recommendation.html">Extra</a>
+            </div>
+          </th>
+          <th class="columna">
+            <div>
+              <a href="https://drive.google.com/file/d/1SAeErsmqOiB9V_h0dkfDBEZAxpF8YWP3/view?usp=sharing">Curriculum vitae</a>
+            </div>
+          </th>
+          <th>
+            <div>
+              <div class="midiv3">
+               <a class="hola2" href="https://www.w3schools.com" > English version</a><span></span></a>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="midiv">
+              <a class="hola" href="https://www.facebook.com/gaby.marroquin.98096/"><span>Facebook</span></a>
+            </div>
+          </th>
+          <th>
+            <div class="midiv2">
+              <a class="hola" href="https://www.linkedin.com/in/gabriela-marroquin-a99584225"><span>Linkedin</span></a>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </table>
+    
+    </footer>
+  </body>
+</html>
